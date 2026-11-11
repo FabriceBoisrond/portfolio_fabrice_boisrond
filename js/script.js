@@ -1,9 +1,23 @@
+/*====================================================================âge automatique=====================================================================*/
+(function () {
+  var el = document.getElementById("age");
+  if (!el) return;
+  var naissance = new Date(el.dataset.birthdate + "T00:00:00");
+  var aujourdhui = new Date();
+  var age = aujourdhui.getFullYear() - naissance.getFullYear();
+  var anniversairePasse =
+    aujourdhui.getMonth() > naissance.getMonth() ||
+    (aujourdhui.getMonth() === naissance.getMonth() &&
+      aujourdhui.getDate() >= naissance.getDate());
+  if (!anniversairePasse) age--;
+  el.textContent = age;
+})();
 /*====================================================================typing animation========================================================================*/
 var typed = new Typed(".typing", {
   strings: [
-    "à la recherche d'une alternance",
-    "à la recherche d'une alternance",
-    "à la recherche d'une alternance",
+    "Passionné de développement web",
+    "Curieux et autonome",
+    "Toujours désireux d'apprendre",
   ],
   typeSpeed: 100,
   backSpeed: 60,
