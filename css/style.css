@@ -679,6 +679,36 @@ h3.my-profession {
   width: 100%;
   display: block;
 }
+.portfolio .portfolio-link {
+  display: block;
+  text-decoration: none;
+}
+.portfolio .portfolio-link:hover .portfolio-item-inner {
+  border-color: var(--skin-color);
+}
+.portfolio .portfolio-info {
+  padding: 15px 5px 0;
+}
+.portfolio .portfolio-info h4 {
+  color: var(--text-black-900);
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.portfolio .portfolio-info p {
+  color: var(--text-black-700);
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.portfolio .portfolio-info .portfolio-tech {
+  font-size: 14px;
+  font-weight: 600;
+}
+.portfolio .portfolio-info .portfolio-url {
+  color: var(--skin-color);
+  font-size: 15px;
+  font-weight: 600;
+}
 
 
 
