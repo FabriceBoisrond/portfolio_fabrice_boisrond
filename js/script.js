@@ -1,3 +1,30 @@
+/*====================================================================frise chronologique horizontale=====================================================================*/
+(function () {
+  document.querySelectorAll(".tl-scroll").forEach(function (wrap) {
+    var tl = wrap.querySelector(".tl");
+    var prev = wrap.querySelector(".tl-nav.prev");
+    var next = wrap.querySelector(".tl-nav.next");
+    if (!tl || !prev || !next) return;
+    function pas() {
+      var item = tl.querySelector(".tl-item");
+      return item ? item.offsetWidth + 24 : 300;
+    }
+    function maj() {
+      prev.hidden = tl.scrollLeft <= 5;
+      next.hidden = tl.scrollLeft + tl.clientWidth >= tl.scrollWidth - 5;
+    }
+    prev.addEventListener("click", function () {
+      tl.scrollBy({ left: -pas(), behavior: "smooth" });
+    });
+    next.addEventListener("click", function () {
+      tl.scrollBy({ left: pas(), behavior: "smooth" });
+    });
+    tl.addEventListener("scroll", maj);
+    window.addEventListener("resize", maj);
+    new MutationObserver(maj).observe(document.body, { attributes: true, subtree: true, attributeFilter: ["class"] });
+    maj();
+  });
+})();
 /*====================================================================âge automatique=====================================================================*/
 (function () {
   var el = document.getElementById("age");
