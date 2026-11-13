@@ -75,16 +75,20 @@
   el.textContent = age;
 })();
 /*====================================================================typing animation========================================================================*/
-var typed = new Typed(".typing", {
-  strings: [
-    "Passionné de développement web",
-    "Curieux et autonome",
-    "Toujours désireux d'apprendre",
-  ],
-  typeSpeed: 100,
-  backSpeed: 60,
-  loop: true,
-});
+// si la bibliothèque Typed ne se charge pas (bloqueur, réseau…), on affiche un texte fixe
+// au lieu de faire planter tout le script (et donc le menu)
+if (typeof Typed !== "undefined") {
+  var typed = new Typed(".typing", {
+    strings: [
+      "Passionné de développement web",
+      "Curieux et autonome",
+      "Toujours désireux d'apprendre",
+    ],
+    typeSpeed: 100,
+    backSpeed: 60,
+    loop: true,
+  });
+}
 /*=====================================================================Aside==================================================================================*/
 
 const nav = document.querySelector(".nav"),
