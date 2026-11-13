@@ -60,20 +60,6 @@
   var depart = document.querySelector(".tl-filter.active");
   filtrer(depart ? depart.dataset.filter : boutons[0].dataset.filter);
 })();
-/*====================================================================âge automatique=====================================================================*/
-(function () {
-  var el = document.getElementById("age");
-  if (!el) return;
-  var naissance = new Date(el.dataset.birthdate + "T00:00:00");
-  var aujourdhui = new Date();
-  var age = aujourdhui.getFullYear() - naissance.getFullYear();
-  var anniversairePasse =
-    aujourdhui.getMonth() > naissance.getMonth() ||
-    (aujourdhui.getMonth() === naissance.getMonth() &&
-      aujourdhui.getDate() >= naissance.getDate());
-  if (!anniversairePasse) age--;
-  el.textContent = age;
-})();
 /*====================================================================typing animation========================================================================*/
 // si la bibliothèque Typed ne se charge pas (bloqueur, réseau…), on affiche un texte fixe
 // au lieu de faire planter tout le script (et donc le menu)
