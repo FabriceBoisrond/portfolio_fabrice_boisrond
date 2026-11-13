@@ -25,6 +25,41 @@
     maj();
   });
 })();
+/*====================================================================filtre du parcours (expérience / formation)=====================================================================*/
+(function () {
+  var boutons = document.querySelectorAll(".tl-filter");
+  var items = document.querySelectorAll(".parcours .tl-item[data-type]");
+  var tl = document.querySelector(".parcours .tl");
+  if (!boutons.length || !items.length) return;
+  function filtrer(type) {
+    boutons.forEach(function (b) {
+      var actif = b.dataset.filter === type;
+      b.classList.toggle("active", actif);
+      b.setAttribute("aria-selected", actif ? "true" : "false");
+    });
+    var visibles = [];
+    items.forEach(function (it) {
+      it.hidden = it.dataset.type !== type;
+      it.classList.remove("is-first", "is-last");
+      if (!it.hidden) visibles.push(it);
+    });
+    if (visibles.length) {
+      visibles[0].classList.add("is-first");
+      visibles[visibles.length - 1].classList.add("is-last");
+    }
+    if (tl) {
+      tl.scrollLeft = 0;
+      tl.dispatchEvent(new Event("scroll"));
+    }
+  }
+  boutons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      filtrer(b.dataset.filter);
+    });
+  });
+  var depart = document.querySelector(".tl-filter.active");
+  filtrer(depart ? depart.dataset.filter : boutons[0].dataset.filter);
+})();
 /*====================================================================âge automatique=====================================================================*/
 (function () {
   var el = document.getElementById("age");

@@ -220,14 +220,14 @@
                 <div class="row">
                   <div class="parcours padd-15">
                     <h3 class="title">Mon parcours</h3>
-                    <div class="tl-legend">
-                      <span class="tl-tag experience-tag"><i class="fa-solid fa-briefcase"></i>Expérience</span>
-                      <span class="tl-tag formation"><i class="fa-solid fa-graduation-cap"></i>Formation</span>
+                    <div class="tl-legend" role="tablist" aria-label="Filtrer le parcours">
+                      <button type="button" class="tl-tag tl-filter experience-tag active" data-filter="experience" role="tab" aria-selected="true"><i class="fa-solid fa-briefcase"></i>Expérience</button>
+                      <button type="button" class="tl-tag tl-filter formation" data-filter="formation" role="tab" aria-selected="false"><i class="fa-solid fa-graduation-cap"></i>Formation</button>
                     </div>
                     <div class="tl-scroll">
                       <button class="tl-nav prev" type="button" aria-label="Étapes précédentes"><i class="fa-solid fa-chevron-left"></i></button>
                       <div class="tl">
-                  <div class="tl-item">
+                  <div class="tl-item" data-type="formation">
                     <p class="tl-when"><i class="fa-regular fa-calendar"></i>Sept. 2017 – juil. 2018</p>
                     <div class="tl-dot"><i class="fa-solid fa-graduation-cap"></i></div>
                     <div class="tl-card">
@@ -243,7 +243,7 @@
                       </ul>
                     </div>
                   </div>
-                  <div class="tl-item">
+                  <div class="tl-item" data-type="formation">
                     <p class="tl-when"><i class="fa-regular fa-calendar"></i>Sept. 2018 – juil. 2021</p>
                     <div class="tl-dot"><i class="fa-solid fa-graduation-cap"></i></div>
                     <div class="tl-card">
@@ -260,7 +260,7 @@
                       <p class="tl-note">Non obtenue</p>
                     </div>
                   </div>
-                  <div class="tl-item">
+                  <div class="tl-item" data-type="formation">
                     <p class="tl-when"><i class="fa-regular fa-calendar"></i>Sept. 2021 – juil. 2023</p>
                     <div class="tl-dot"><i class="fa-solid fa-graduation-cap"></i></div>
                     <div class="tl-card">
@@ -277,7 +277,7 @@
                       <p class="tl-note">Non obtenue</p>
                     </div>
                   </div>
-                  <div class="tl-item">
+                  <div class="tl-item" data-type="experience">
                     <p class="tl-when"><i class="fa-regular fa-calendar"></i>Août 2022 – juin 2023</p>
                     <div class="tl-dot"><i class="fa-solid fa-briefcase"></i></div>
                     <div class="tl-card">
@@ -293,7 +293,7 @@
                       </ul>
                     </div>
                   </div>
-                  <div class="tl-item">
+                  <div class="tl-item" data-type="experience">
                     <p class="tl-when"><i class="fa-regular fa-calendar"></i>Déc. 2022 – juil. 2025</p>
                     <div class="tl-dot"><i class="fa-solid fa-briefcase"></i></div>
                     <div class="tl-card">
@@ -309,7 +309,7 @@
                       </ul>
                     </div>
                   </div>
-                  <div class="tl-item">
+                  <div class="tl-item" data-type="experience">
                     <p class="tl-when"><i class="fa-regular fa-calendar"></i>Juil. 2023 – août 2023</p>
                     <div class="tl-dot"><i class="fa-solid fa-briefcase"></i></div>
                     <div class="tl-card">
@@ -325,7 +325,7 @@
                       </ul>
                     </div>
                   </div>
-                  <div class="tl-item">
+                  <div class="tl-item" data-type="experience">
                     <p class="tl-when"><i class="fa-regular fa-calendar"></i>Déc. 2024 – août 2025</p>
                     <div class="tl-dot"><i class="fa-solid fa-briefcase"></i></div>
                     <div class="tl-card">

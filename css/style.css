@@ -603,6 +603,27 @@ h3.my-profession {
 .tl-legend .tl-tag .fa-solid {
   margin-right: 6px;
 }
+.tl-filter {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 7px 16px;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+.tl-filter:hover {
+  opacity: 1;
+}
+.tl-legend .tl-filter.active {
+  opacity: 1;
+  background-color: var(--skin-color);
+  border-color: var(--skin-color);
+  color: #fff;
+}
+.tl-item[hidden] {
+  display: none;
+}
 .tl-scroll {
   position: relative;
 }
@@ -642,11 +663,13 @@ h3.my-profession {
   height: 2px;
   background-color: var(--skin-color);
 }
-.tl-item:last-child::before {
+.tl-item:last-child::before,
+.tl-item.is-last::before {
   right: 0;
   background: linear-gradient(to right, var(--skin-color), transparent);
 }
-.tl-item:first-child::before {
+.tl-item:first-child::before,
+.tl-item.is-first::before {
   background: linear-gradient(to right, transparent, var(--skin-color) 40px);
 }
 .tl-when {
